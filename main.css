@@ -1,0 +1,177 @@
+
+/* * {
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+} */
+
+/*
+grid-template: rows rows / columns columns;
+having more "rows" literally gives you more rows
+
+grid-row-start / grid-column-start
+/ grid-row-end / grid-column-end
+*/
+
+.main {
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  display: inline-grid;
+  grid-template: repeat(3, 1fr)/ 2fr repeat(2, 1fr);
+  grid-template-areas:
+    "plants intro intro"
+    "plants form1 form2"
+    "plants submit submit";
+}
+
+.main > div {
+  padding: 5px;
+}
+
+/* #plants {
+  grid-area: 1 / 1 / 1 / 2;
+} */
+
+#plants {
+  grid-area: plants;
+}
+
+#intro {
+  grid-area: intro;
+}
+
+#form1 {
+  grid-area: form1;
+}
+
+#form2 {
+  grid-area: form2;
+}
+
+#button {
+  grid-area: submit;
+}
+
+#intro, #button {
+  background-color: rgb(247, 247, 250);
+}
+
+#intro, #button, #form1, #form2 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+}
+
+#form1, #form2 {
+  font-size: 0.75rem;
+}
+
+#dothis {
+  font-size: 1rem !important;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#form1, #form2 {
+  box-shadow:  0px 4px 0px 0px rgba(0,0,0,0.25);
+  z-index: 2;
+}
+
+#form2 {
+  padding-top: 45px;
+}
+
+.odin-frame {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: black;
+  color: white;
+  display: grid;
+  background-image: url('plants-halie-west.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.Odin {
+  align-self: center;
+  justify-self: center;
+  font-size: 3em;
+  font-family: Norse-Bold, arial;
+  transform: translate(-12px, 20px);
+}
+
+.source {
+  align-self: flex-end;
+  justify-self: center;
+  font-size: 0.75em;
+  font-family: arial;
+}
+
+.source a {
+  color: white;
+}
+
+@font-face {
+  font-family: Norse-Bold; /* set name */
+  src: url(Norse-Bold.otf); /* url of the font */
+  font-weight: bold;
+}
+
+img {
+  width: 50px;
+  float: left;
+  transform: translate(0px, -4px);
+}
+
+button {
+  padding:14px;
+  background: #596D48;
+  border-radius: 5px;
+  color: white;
+  box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.25);
+  border: none;
+  width: 200px;
+}
+
+#button {
+  padding:20px;
+}
+
+#button a {
+  color: #596D48;
+}
+
+#intro {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-end;
+}
+
+form {
+  border-color: #E5E7EB;
+}
+
+input {
+  border: 2px solid #000;
+  margin-bottom: 15px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+input:focus {
+  border-color:#b9e2ec!important;
+}
+
+
+#user_password:invalid, #confirm_password:invalid {
+  border-color: red;
+}
+
+#user_password:valid, #confirm_password:valid {
+  border-color: green;
+}
